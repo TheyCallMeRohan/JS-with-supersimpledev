@@ -1,7 +1,3 @@
-// function getComputerChoice() {
-//   let computerSelection = Math.floor(Math.random() * 3);
-// }
-
 function playRound(playerSelection, computerSelection) {
   let value = " ";
   if (
@@ -47,16 +43,23 @@ function playRound(playerSelection, computerSelection) {
   } else if (
     playerSelection.toUpperCase() === "scissor".toUpperCase() &&
     computerSelection === 2
-  )
-    return value;
+  ) {
+    value = "It's a tie";
+  } else {
+    value = "wrong value";
+  }
+  return value;
 }
-for (let i = 0; i < 5; i++) {
-  let playerSelection = prompt("Enter Rock Paper Scissor");
-  const computerSelection = Math.floor(Math.random() * 3);
-  const rock = 0;
-  const paper = 1;
-  const scissor = 2;
-  console.log(computerSelection);
-  console.log(playerSelection);
-  alert(playRound(playerSelection, computerSelection));
+function game() {
+  for (let i = 0; i < 5; i++) {
+    let playerSelection = prompt("Enter Rock Paper Scissor");
+    const computerSelection = Math.floor(Math.random() * 3);
+    const rock = 0;
+    const paper = 1;
+    const scissor = 2;
+    console.log(computerSelection);
+    console.log(playerSelection);
+    alert(playRound(playerSelection, computerSelection));
+  }
 }
+game();
